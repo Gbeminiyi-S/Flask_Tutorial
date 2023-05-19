@@ -1,3 +1,23 @@
 <!doctype html>
-
-<p>This is my root page!</p>
+<html>
+<head>
+    <title>Welcome Flask App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome Home!</h1>
+    <div>
+        <p>Please Enter your name:</p>
+        <form class="pure-form" method="POST" action="/">
+        Name: <br>
+        <input type="text" name="username"><br>
+        <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+        </form>
+    </div>
+    <div>
+        {% if name %}
+            <p> Welcome to my site {{ name }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
